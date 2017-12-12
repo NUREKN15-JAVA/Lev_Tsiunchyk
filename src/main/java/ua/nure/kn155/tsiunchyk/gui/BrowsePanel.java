@@ -111,7 +111,7 @@ public class BrowsePanel extends javax.swing.JPanel implements ActionListener {
         try {
             model = new UserTableModel(parent.getUserDAO().findAll());
         } catch (DatabaseException e) {
-            model = new UserTableModel(new ArrayList<>());
+            model = new UserTableModel(new ArrayList<User>());
             JOptionPane.showMessageDialog(this, e.getMessage(), MyBundle.getString("error"), JOptionPane.ERROR_MESSAGE);
         }
         userTable.setModel(model);
